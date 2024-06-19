@@ -1,6 +1,7 @@
 package com.example.quizzapp.model
 
 data class QuestionModel(
+    val id: Int,
     val flag: Int,
     val option1: String,
     val option2: String,

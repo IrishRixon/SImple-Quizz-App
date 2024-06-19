@@ -1,7 +1,6 @@
 package com.example.quizzapp.utils
 
 import com.example.quizzapp.R
-import com.example.quizzapp.activities.Questions
 import com.example.quizzapp.model.QuestionModel
 
 object Constant {
@@ -9,6 +8,7 @@ object Constant {
         val questionsList = mutableListOf<QuestionModel>()
 
         val question1 = QuestionModel(
+            1,
             R.drawable.afghanistan,
             "Albania",
             "Algeria",
@@ -19,6 +19,7 @@ object Constant {
         questionsList.add(question1)
 
         val question2 = QuestionModel(
+            2,
             R.drawable.andorra,
             "Albania",
             "Algeria",
@@ -29,6 +30,7 @@ object Constant {
         questionsList.add(question2)
 
         val question3 = QuestionModel(
+            3,
             R.drawable.albania,
             "Albania",
             "Algeria",
@@ -39,6 +41,7 @@ object Constant {
 
         questionsList.add(question3)
         val question4 = QuestionModel(
+            4,
             R.drawable.algeria,
             "Albania",
             "Algeria",

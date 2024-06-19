@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Questions">
+    tools:context=".activities.QuestionsActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
             android:id="@+id/flag"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:contentDescription="@string/todo"
             tools:background="@drawable/afghanistan" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -54,63 +55,71 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="1/4" />
+                android:text="@string/_1_4" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <TextView
-            android:id="@+id/option1"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/options_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            tools:text="Option"
-            android:background="@drawable/default_border_bg"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/option2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            tools:text="Option"
-            android:background="@drawable/default_border_bg"/>
+            <TextView
+                android:id="@+id/option1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/default_border_bg"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                tools:text="Option" />
 
-        <TextView
-            android:id="@+id/option3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            tools:text="Option"
-            android:background="@drawable/default_border_bg"/>
+            <TextView
+                android:id="@+id/option2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/default_border_bg"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                tools:text="Option" />
 
-        <TextView
-            android:id="@+id/option4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            tools:text="Option"
-            android:background="@drawable/default_border_bg"/>
+            <TextView
+                android:id="@+id/option3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/default_border_bg"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                tools:text="Option" />
+
+            <TextView
+                android:id="@+id/option4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/default_border_bg"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                tools:text="Option" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/check_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
             android:text="@string/check"
             android:textSize="20sp"
-            app:cornerRadius="8dp"
             app:backgroundTint="@color/dark_violet"
-            android:padding="10dp"
-            android:layout_marginTop="15dp"/>
+            app:cornerRadius="8dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
