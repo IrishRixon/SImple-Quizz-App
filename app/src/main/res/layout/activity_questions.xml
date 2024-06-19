@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Questions">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:padding="10dp"
+            android:text="@string/what_country_this_flag_belongs_to"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            tools:background="@drawable/afghanistan" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:indeterminate="false"
+                android:max="4"
+                android:minHeight="50dp"
+                tools:progress="3" />
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1/4" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            tools:text="Option"
+            android:background="@drawable/default_border_bg"/>
+
+        <TextView
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            tools:text="Option"
+            android:background="@drawable/default_border_bg"/>
+
+        <TextView
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            tools:text="Option"
+            android:background="@drawable/default_border_bg"/>
+
+        <TextView
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            tools:text="Option"
+            android:background="@drawable/default_border_bg"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/check_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/check"
+            android:textSize="20sp"
+            app:cornerRadius="8dp"
+            app:backgroundTint="@color/dark_violet"
+            android:padding="10dp"
+            android:layout_marginTop="15dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>
