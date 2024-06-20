@@ -46,7 +46,7 @@ class OptionsVisuals : View.OnClickListener {
         )
     }
 
-    private fun resetVisuals() {
+    fun resetVisuals() {
         for (option in listOfOptions) {
             option.setTextColor(Color.parseColor("#FF000000"))
             option.typeface = Typeface.DEFAULT

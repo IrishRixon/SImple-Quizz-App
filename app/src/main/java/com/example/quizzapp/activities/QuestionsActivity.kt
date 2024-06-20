@@ -57,7 +57,7 @@ class QuestionsActivity : AppCompatActivity() {
         val optionsVisuals = OptionsVisuals()
         optionsVisuals.listOfOptions = listOfOptions
         checkAnswer =
-            CheckAnswer(listOfOptions, checkBtn, optionsVisuals, setQuestions.getCurrentQuestion())
+            CheckAnswer(listOfOptions, checkBtn, optionsVisuals, flag, setQuestions)
 
         for (option in listOfOptions) {
             option.setOnClickListener(optionsVisuals)
