@@ -10,21 +10,26 @@ import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.quizzapp.R
+import com.example.quizzapp.utils.CheckAnswer
 import com.example.quizzapp.utils.OptionsVisuals
 import com.example.quizzapp.utils.SetQuestions
+import com.google.android.material.button.MaterialButton
 
 class QuestionsActivity : AppCompatActivity() {
 
     private lateinit var listOfOptions: List<TextView>
+
     //Views
     private lateinit var flag: ImageView
     private lateinit var option1: TextView
     private lateinit var option2: TextView
     private lateinit var option3: TextView
     private lateinit var option4: TextView
+    private lateinit var checkBtn: MaterialButton
 
     //Objects
     private lateinit var setQuestions: SetQuestions
+    private lateinit var checkAnswer: CheckAnswer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +46,7 @@ class QuestionsActivity : AppCompatActivity() {
         option2 = findViewById(R.id.option2)
         option3 = findViewById(R.id.option3)
         option4 = findViewById(R.id.option4)
+        checkBtn = findViewById(R.id.check_btn)
 
         listOfOptions = listOf(option1, option2, option3, option4)
 
@@ -48,7 +54,10 @@ class QuestionsActivity : AppCompatActivity() {
         setQuestions = SetQuestions()
         setQuestions.setQuestions(flag, listOfOptions)
 
-        val optionsVisuals = OptionsVisuals(listOfOptions)
+        val optionsVisuals = OptionsVisuals()
+        optionsVisuals.listOfOptions = listOfOptions
+        checkAnswer =
+            CheckAnswer(listOfOptions, checkBtn, optionsVisuals, setQuestions.getCurrentQuestion())
 
         for (option in listOfOptions) {
             option.setOnClickListener(optionsVisuals)
