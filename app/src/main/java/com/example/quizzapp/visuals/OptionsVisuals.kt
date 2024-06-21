@@ -1,4 +1,4 @@
-package com.example.quizzapp.utils
+package com.example.quizzapp.visuals
 
 import android.graphics.Color
 import android.graphics.Typeface
@@ -8,11 +8,11 @@ import androidx.core.content.ContextCompat
 import com.example.quizzapp.R
 
 class OptionsVisuals : View.OnClickListener {
-     lateinit var listOfOptions: List<TextView>
-     private lateinit var selectedOption: TextView
+    lateinit var listOfOptions: List<TextView>
+    private var selectedOption: TextView? = null
+    private var isClickable: Boolean = true
 
     private fun selectedOption(v: View?) {
-
         when (v?.id) {
             R.id.option1 -> {
                 selectedOptionVisual(listOfOptions[0])
@@ -76,11 +76,25 @@ class OptionsVisuals : View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        resetVisuals()
-        selectedOption(v)
+        if(isClickable) {
+            resetVisuals()
+            selectedOption(v)
+        }
     }
 
-    fun getSelectedOption(): TextView {
+    fun getSelectedOption(): TextView? {
         return selectedOption
     }
+    fun resetSelectedOption() {
+        selectedOption = null
+    }
+
+    fun enableClickable() {
+        isClickable = true
+    }
+    fun disableClickable() {
+        isClickable = false
+    }
+
+
 }

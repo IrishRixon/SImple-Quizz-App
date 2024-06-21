@@ -37,7 +37,7 @@
             android:orientation="horizontal">
 
             <ProgressBar
-                android:id="@+id/progressBar"
+                android:id="@+id/progress_bar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
                 android:indeterminate="false"
                 android:max="4"
                 android:minHeight="50dp"
-                tools:progress="3" />
+                tools:progress="1" />
 
             <TextView
                 android:id="@+id/progress_text"
