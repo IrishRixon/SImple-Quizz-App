@@ -2,6 +2,7 @@ package com.example.quizzapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             }
             else {
                 Intent(this@MainActivity, QuestionsActivity::class.java).also {
+                    it.putExtra("name", name)
                     startActivity(it)
                     finish()
                 }

@@ -1,5 +1,6 @@
 package com.example.quizzapp.utils
 
+import android.content.Intent
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,11 +16,17 @@ class CheckAnswer(
     private val flag: ImageView,
     private val setQuestions: SetQuestions,
     private val progressBarVisuals: ProgressBarVisuals,
-    toast: () -> Unit
+    toast: () -> Unit,
+    intent: () -> Unit
 ) {
+
+    private var score: Int = 0
+
     init {
+
         checkBtn.setOnClickListener {
             val currentQuestion = setQuestions.getCurrentQuestion()
+
 
             if (optionsVisuals.getSelectedOption() == null) {
                 toast()
@@ -31,6 +38,8 @@ class CheckAnswer(
 
                 if (optionsVisuals.getSelectedOption() == listOfOptions[currentQuestion.correctAns - 1]) {
                     optionsVisuals.correctAnswerVisual(optionsVisuals.getSelectedOption()!!)
+                    increaseScore()
+//                    Log.d("SCORE", scoreCounter.toString())
                 } else {
                     optionsVisuals.wrongAnswerVisual(optionsVisuals.getSelectedOption()!!)
                     optionsVisuals.correctAnswerVisual(listOfOptions[currentQuestion.correctAns - 1])
@@ -48,9 +57,17 @@ class CheckAnswer(
 
                     checkBtn.text = "Check"
                 } else {
-                    Log.d("Check", "${setQuestions.getCurrentQuestionElement()}")
+                    intent()
                 }
             }
         }
     }
+
+    fun getScore(): Int {
+        return score
+    }
+    private fun increaseScore() {
+        score++
+    }
+
 }

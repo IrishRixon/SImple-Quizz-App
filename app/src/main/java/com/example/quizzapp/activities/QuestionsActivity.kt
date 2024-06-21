@@ -1,6 +1,8 @@
 package com.example.quizzapp.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -64,14 +66,24 @@ class QuestionsActivity : AppCompatActivity() {
 
         val optionsVisuals = OptionsVisuals()
         optionsVisuals.listOfOptions = listOfOptions
-        checkAnswer =
-            CheckAnswer(listOfOptions, checkBtn, optionsVisuals, flag, setQuestions, progressBarVisuals) {
+        checkAnswer = CheckAnswer(
+            listOfOptions, checkBtn, optionsVisuals, flag, setQuestions, progressBarVisuals,
+            {
                 Toast.makeText(
                     this,
                     "Please select your answer",
                     Toast.LENGTH_SHORT
                 ).show()
+            },
+            {
+                Intent(this, EndQuizActivity::class.java).also {
+                    it.putExtra("name", intent.getStringExtra("name"))
+                    it.putExtra("score", checkAnswer.getScore())
+                    startActivity(it)
+                    finish()
+                }
             }
+        )
 
         for (option in listOfOptions) {
             option.setOnClickListener(optionsVisuals)
